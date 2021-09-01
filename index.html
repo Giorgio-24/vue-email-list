@@ -20,7 +20,7 @@
 <body>
     <div id="root">
         <ul>
-            <li>{{ emailList }}</li>
+            <li v-for="(email, index) in emailList"><strong>Email {{ index + 1 }})</strong> {{ email }} ;</li>
         </ul>
     </div>
     <script src="./script.js"></script>
