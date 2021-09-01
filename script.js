@@ -5,6 +5,7 @@ var root = new Vue(
         el: '#root',
         data: {
             emailList: [],
+            totalEmails: 10,
         },
         methods: {
             axiosTemplate() {
@@ -21,15 +22,8 @@ var root = new Vue(
             }
         },
         created() {
-            axios
-                .get('https://flynn.boolean.careers/exercises/api/random/mail')
-                .then((res) => {
-                    const response = res.data.response;
-                    this.emailList = response;
-                })
-                .catch((error) => {
-                    //! VA SOLO IN CASO DI ERRORI
-                    console.log(error);
-                });
+            for (let i = 0; i < this.totalEmails; i++) {
+                this.axiosTemplate();
+            }
         },
     });
