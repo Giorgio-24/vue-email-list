@@ -19,9 +19,14 @@
 
 <body>
     <div id="root">
-        <ul>
-            <li v-for="(email, index) in emailList"><strong>Email {{ index + 1 }})</strong> {{ email }} ;</li>
-        </ul>
+        <div class="d-flex justify-content-center align-items-center">
+            <ul v-if="emailList.length == totalEmails">
+                <li v-for="(email, index) in emailList"><strong>Email {{ index + 1 }})</strong> {{ email }} ;</li>
+            </ul>
+            <div v-else>
+                <i class="fas fa-spinner fa-spin fa-3x"></i>
+            </div>
+        </div>
     </div>
     <script src="./script.js"></script>
 </body>
