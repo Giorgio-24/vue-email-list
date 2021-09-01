@@ -25,6 +25,6 @@ var root = new Vue(
         created() {
             for (let i = 0; i < this.totalEmails; i++) {
                 this.axiosTemplate();
-            }
+            };
         },
     });
