@@ -23,6 +23,7 @@
             <ul v-if="emailList.length == totalEmails">
                 <li v-for="(email, index) in emailList"><strong>Email {{ index + 1 }})</strong> {{ email }} ;</li>
             </ul>
+            <h3 v-else-if="error !== ''">{{ error }}</h3>
             <div v-else>
                 <i class="fas fa-spinner fa-spin fa-3x"></i>
             </div>

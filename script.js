@@ -6,6 +6,7 @@ var root = new Vue(
         data: {
             emailList: [],
             totalEmails: 10,
+            error: '',
         },
         methods: {
             axiosTemplate() {
@@ -15,9 +16,9 @@ var root = new Vue(
                         const response = res.data.response;
                         this.emailList.push(response);
                     })
-                    .catch((error) => {
+                    .catch(() => {
                         //! VA SOLO IN CASO DI ERRORI
-                        console.log(error);
+                        this.error = "C'è stato un errore nel caricamento della pagina, si prega di riprovare.";
                     });
             }
         },
